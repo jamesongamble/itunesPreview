@@ -18,13 +18,13 @@
           $.ajax({
             type: 'GET',
             dataType: 'json',
-            url: 'https://itunes.apple.com/search?' + 'term=' + urlAppend + '&media=music',
+            url: 'https://itunes.apple.com/search?' + 'term=' + urlAppend + '&media=musicVideo',
           }).done(function(result) {
             console.log(result);  
             var resultsArray = result.results; 
             var song = resultsArray[0];
             var previewURL = song.previewUrl;
-            $('body').append('<audio controls autoplay src="'+previewURL+'" />');
+            $('body').append('<video controls autoplay src="'+previewURL+'" />');
           });
         })
       })
